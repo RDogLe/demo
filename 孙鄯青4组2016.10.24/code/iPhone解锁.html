@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iPhone解锁</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #cc6666;
+        }
+        .box{
+            width: 250px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 35px;
+            margin: 100px auto;
+            text-align: center;
+            background: -webkit-linear-gradient(-45deg,#fff,#000,#fff,#000);
+            -webkit-background-clip: text;
+            -webkit-transition: 1s all ease;
+            color: rgba(0,0,0,0);
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBox = document.querySelector('.box');
+            var n = 10;
+            function move(){
+                n++;
+                oBox.style.background= '-webkit-linear-gradient(-45deg,#000 '+n+'%,#fff '+(n+10)+'%,#000 '+(n+20)+'%)';
+                oBox.style.WebkitBackgroundClip = 'text';
+                n = n%80;
+            }
+            move();
+            setInterval(move,30)
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    移动滑块解锁
+</div>
+</body>
+</html>
